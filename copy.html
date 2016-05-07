@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>360导航</title>
+	<link rel="stylesheet" href="./css/copy.css">
+</head>
+<body>
+	<div id="fullPage">
+		<!-- 第一屏 -->
+		<section class="section first">
+			<!-- LOGO -->
+			<div class="logo"></div>
+			<!-- 文字 -->
+			<div class="text">
+				<img src="./images/text_1.png" alt="">
+				<img src="./images/text_2.png" alt="">
+				<img src="./images/text_3.png" alt="">
+				<img src="./images/text_4.png" alt="">
+				<img src="./images/text_5.png" alt="">
+				<img src="./images/text_6.png" alt="">
+				<img src="./images/text_7.png" alt="">
+				<img src="./images/text_8.png" alt="">
+			</div>
+			<!-- 其它信息 -->
+			<div class="info"></div>
+		</section>
+		<!-- 第二屏 -->
+		<section class="section second">
+			<!-- 盾牌 -->
+			<div class="shield">
+				<img src="./images/shield_1.png" alt="">
+				<img src="./images/shield_2.png" alt="">
+				<img src="./images/shield_3.png" alt="">
+				<img src="./images/shield_4.png" alt="">
+				<img src="./images/shield_5.png" alt="">
+				<img src="./images/shield_6.png" alt="">
+				<img src="./images/shield_7.png" alt="">
+				<img src="./images/shield_8.png" alt="">
+				<img src="./images/shield_9.png" alt="">
+			</div>
+			<!-- 其它信息 -->
+			<div class="info"></div>
+		</section>
+		<!-- 第三屏 -->
+		<section class="section third">
+			<!-- 其它信息 -->
+			<div class="info"></div>
+			<!-- 圆 -->
+			<div class="circle"></div>
+			<!-- 火箭 -->
+			<div class="rocket"></div>
+		</section>
+		<!-- 第四屏 -->
+		<section class="section fourth">
+			<!-- 搜索 -->
+			<div class="search">
+				<div class="toolbar"></div>
+				<!-- 关键字 -->
+				<div class="keys"></div>
+				<!-- 盒子 -->
+				<div class="wrap">
+					<div class="result"></div>
+				</div>
+			</div>
+			<!-- 其它信息 -->
+			<div class="info"></div>
+		</section>
+		<!-- 第五屏 -->
+		<section class="section fifth">
+			<!-- 其它信息 -->
+			<div class="info"></div>
+			<!-- 浏览器 -->
+			<div class="broswer">
+				<div class="tool"></div>
+				<!-- 边框线 -->
+				<div class="lines lineleft"></div>
+				<div class="lines lineright"></div>
+				<div class="lines linetop"></div>
+				<div class="lines linebottom"></div>
+				<!-- 工具栏 -->
+				<div class="toolbar">
+					<p></p>
+				</div>
+				<!-- 特别line -->
+				<div class="lineextra"></div>
+				<!-- 其它 -->
+				<div class="extra"></div>
+			</div>
+		</section>
+	</div>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery.fullPage.min.js"></script>
+	<script>
+		// $('#fullPage').animate({
+		// 	width: ''
+		// })
+
+		// 这里调用插件
+		$('#fullPage').fullpage({
+			// 简单配置插件
+			sectionsColor: ['#0da5d6', '#2AB561', '#DE8910', '#16BA9D', '#0DA5D6'],
+			afterLoad: function (a, k) {
+				console.log(k);
+
+				// 给所有的都清掉.current
+				$('.section').removeClass('current');
+
+				// 只给当前加.current
+				setTimeout(function () {
+					// 延时执行
+					$('.section').eq(k - 1).addClass('current');
+				}, 200);
+				
+			}
+		});
+	</script>
+</body>
+</html>
